@@ -1,0 +1,63 @@
+
+<header>
+
+    <div class="header">         
+
+        <a href="/" class="logo"><i class="fas fa-shopping-basket"></i>Emart</a>
+
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+ 
+        <nav class="navbar ">
+            <a href="/">home</a>
+            <a href="#category">category</a>
+            <a href="/products">products</a>
+            {{#if user}}
+            <a href="/orders/{{user._id}}">orders</a>
+            {{/if}}
+        </nav>
+   
+        <div class="icons">
+            <a href="/cart" class="fas fa-shopping-cart"> <span class="badge bg-success"
+                                id="cart-count">{{cartCount}}</span></a>
+            <a href="#" class="fas fa-heart"></a>
+            </div>
+           
+ <div class="dropdown user-icon">
+                    <a class=" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{#if user}}
+                        {{user.Name}}
+                        {{else}}
+                        <i class="fa fa-user-circle user-icon" aria-hidden="true"></i>
+                        {{/if}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        {{#if user}}
+                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+
+                        {{else}}
+                        <li><a class="dropdown-item" href="/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/signup">Register</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+              
+          
+        </div>
+       
+        
+       
+    </div>
+
+
+
+</header>
+
+
+
+
+
+

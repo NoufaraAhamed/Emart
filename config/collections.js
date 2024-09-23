@@ -1,0 +1,9 @@
+module.exports={
+    PRODUCT_COLLECTION:'product',
+    USER_COLLECTION:'user',
+    CART_COLLECTION:'cart',
+    ORDER_COLLECTION:'order',
+    PAYPAL_PAYMENT_COLLECTION:'Paypal_payment',
+    PAYPAL_RESPONSE_COLLECTION:'paypal_response',
+    ADMIN_COLLECTION:'admin'
+}

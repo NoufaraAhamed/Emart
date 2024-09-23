@@ -1,0 +1,78 @@
+<section>
+    <div class="container cartParentDiv ">
+        <table class="table mt-5 border ">
+            <thead>
+                <tr>
+                    <th>remove</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                
+                <tr>
+                    <td class="tableData ">
+                        <a href="/remove-product?user={{../user}}&product={{this.product._id}}"   onclick="return confirm('are you want to remove{{this.product.Name}}?')"><i class="fa fa-trash remove" aria-hidden="true"></i></a>
+                    </td>
+                   
+
+                    <td><img src="/product-images/{{this.product._id}}.jpg" alt="" style="width: 70px; height:70px"></td>
+
+                    <td  class="tableData">{{this.product.Name}}</td>
+                    <td class="tableData">$.{{this.product.price}}</td>
+
+                   
+                    <td class="tableData ">
+                        <button class="cart-item-count mr-3 changeQuantityButton" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user}}',-1)">-</button>
+                        <span id="{{this.product._id}}" class="tableData">{{this.quantity}}</span>
+                        <button class="cart-item-count ml-3 changeQuantityButton" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user}}',1)">+</button>
+                    </td>
+                    
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+
+        </table>
+        <hr>  
+
+        <h5 class="text-end pe-5 total">TOTAL : $. <span id="total">{{total}}</span></h5>
+    
+        <a href="/place-order" class="btn btn-success float-end  ps-5 pe-5 me-4">Place Order</a>
+
+    </div>
+</section>
+
+<script>
+    function changeQuantity(cartId,proId,userId,count){
+        let quantity=parseInt(document.getElementById(proId).innerHTML)
+         count=parseInt(count)
+
+        $.ajax({
+            url:'/change-product-quantity',
+            data:{
+                cart:cartId,
+                product:proId,
+                count:count,
+                quantity:quantity,
+                user:userId
+            },
+            method:'post',
+            success:(response)=>{
+                if(response.removeProduct){
+                    alert('Product removed from cart')
+                    location.reload()
+
+                }else{
+                    document.getElementById(proId).innerHTML=quantity+count
+                    document.getElementById('total').innerHTML=response.total
+                }
+                
+            }
+        })
+    }
+</script> 

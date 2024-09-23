@@ -1,0 +1,202 @@
+
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image">
+        <img src="images/home-img.jpg.png" alt="">
+    </div>
+
+    <div class="content ps-2">
+        <span>home appliances and lifestyle</span>
+        <h3>smart choice </h3>
+        <span>better solution</span>
+        <br>
+        <a href="/products" class="btn">get started</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="content">
+            <h3>free shipping</h3>
+            <p>order over $100</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+            <h3>secure payment</h3>
+            <p>100 secure payment</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+            <h3>easy returns</h3>
+            <p>10 days returns</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+            <h3>24/7 support</h3>
+            <p>call us anytime</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- category section starts  -->
+
+<section class="category" id="category">
+
+    <h1 class="heading">shop by <span>category</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>smart phones</h3>
+            <br>
+            <img src="images/category-1.jpg" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="box">
+            <h3>laptop</h3>
+            <br>
+            <img src="images/category-2.jpg" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="box">
+            <h3>home appliances</h3>
+            
+            <img style="height: 17rem;"  src="images/category-3.jpg" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="box">
+            <h3>camera</h3>
+            <br>
+            <img src="images/category-4.png" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- category section ends -->
+
+
+<!--top brands start-->
+<section class="top-brands">
+    <img src="" alt="">
+
+</section>
+<!--top brands end-->
+
+<!-- product section starts  -->
+
+<section class="product" id="product">
+
+    <h1 class="heading">latest <span>products</span></h1>
+<div class=" container mt-5">
+            <div class="row">
+ {{#each products}}
+                <div class="productParentDiv col-md-3 p-5">
+                    <div class="card">
+                        <img class="card-img-top img"
+                            src="/product-images/{{this._id}}.jpg"
+                            alt="Card image cap"
+                            >
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.Name}}</h5>
+                            <p class="cart-text">$.{{this.price}}</p>
+                            <p class="cart-text">{{this.description}}</p>
+                            
+                           <div>
+                            <a href="#" class=" a fas fa-heart"></a>
+                            <button onclick="addToCart('{{this._id}}')" class="btn button">Add to cart</button>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{/each}}
+
+            </div>
+</div>
+
+    </div>
+
+</section>
+
+<!-- product section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="/" class="logo "><i class="fas fa-shopping-basket"></i>Emart</a>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam culpa sit enim nesciunt rerum laborum illum quam error ut alias!</p>
+            <div class="share">
+                <a href="#" class="btn fab fa-facebook-f"></a>
+                <a href="#" class="btn fab fa-twitter"></a>
+                <a href="#" class="btn fab fa-instagram"></a>
+                <a href="#" class="btn fab fa-linkedin"></a>
+            </div>
+        </div>
+        
+        <div class="box">
+            <h3>our location</h3>
+            <div class="links">
+                <a href="#">india</a>
+                <a href="#">USA</a>
+                <a href="#">france</a>
+                <a href="#">japan</a>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <div class="links">
+                <a href="#">home</a>
+                <a href="#">category</a>
+                <a href="#">product</a>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>download app</h3>
+            <div class="links">
+                <a href="#">google play</a>
+                <a href="#">app store</a>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> created by <span> Ncoder </span> | all rights reserved! </h1>
+
+</section>
+
+<!-- footer section ends -->
